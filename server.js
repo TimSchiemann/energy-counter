@@ -28,19 +28,11 @@ app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port ${process.env.PORT || PORT}`)
 })
 
-// app.get('/', async (request, response) => {
-//     try {
-//         response.render('index.ejs')
-//     } catch (error) {
-//         response.status(500).send({message: error.message})
-//     }
-// })
-
 app.get('/', (req, res) => {
     // res.sendFile(__dirname + '/index.html')
-    collection.find().toArray()
+    collection.find().sort({counter: -1}).toArray()
     .then(results => {
-        console.log(results)
+        // console.log(results)
         res.render('index.ejs', {electricity: results})
     })
     .catch(error => {
@@ -49,12 +41,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/electricity', (req, res) => {
+    console.log(req.body)
     collection.insertOne(req.body)
     .then(result => {
         res.redirect('/')
     })
     .catch(error => console.error(error))
-    console.log(req.body)
 })
 
 

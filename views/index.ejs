@@ -27,17 +27,19 @@
                 <th>Differenz</th>
                 <th>Kosten</th>
             </tr>
-            <% for (var i = 0; i < electricity.length; i++) { %>
+            <% for (let i = 0; i < electricity.length; i++) { %>
                 <tr>
                   <td><%= electricity[i]._id %></td>
                   <td><%= electricity[i].date %></td>
                   <td><%= electricity[i].counter%></td>
+                  <td></td>
+                  <td><%= (electricity[i].counter * 0.35).toFixed(2)%> $</td>
                 </tr>    
                <% } %>
         </table>
 
     </section>
 
-
+    <script src="main.js"></script>
 </body>
 </html>
