@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="hero">
+        <h1>Stromzaehler</h1>
+        <div class="input">
+            <form action="/electricity" method="POST">
+                <input type="number" placeholder="zaehlerstand" name="counter">
+                <input type="date" placeholder="datum" name="date">
+                <button type="submit">Absenden</button>
+            </form>
+        </div>
+    </section>
+    <section>
+        <table class="data">
+            <tr>
+                <th>ID</th>
+                <th>Datum</th>
+                <th>Zaehlerstand</th>
+                <th>Differenz</th>
+                <th>Kosten</th>
+            </tr>
+            <% for (var i = 0; i < electricity.length; i++) { %>
+                <tr>
+                  <td><%= electricity[i]._id %></td>
+                  <td><%= electricity[i].date %></td>
+                  <td><%= electricity[i].counter%></td>
+                </tr>    
+               <% } %>
+        </table>
+
+    </section>
+
+
+</body>
+</html>

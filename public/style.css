@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+}
+
+h1{
+    color: red;
+    font-size: 5rem;
+}
+
+.hero {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    border: 1px solid red;
+    width: 50%;
+    height: 10em;
+    padding: 3em;
+}
+
+form {
+    background: green;
+    display: flex;
+    align-content: space-around;
+}
+
+input, button {
+    font-size: 2rem;
+    flex-grow: 1;
+    max-width: 33.3333%;
+}
+
+
+
+/* table section */
+
+.data{
+    border: 1px solid green;
+    width: 100%;
+    font-size: 3em;
+}
+
+table {
+    margin: 2em auto;
+    border-spacing: 1em;
+}
