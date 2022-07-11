@@ -41,7 +41,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/electricity', (req, res) => {
-    console.log(req.body)
+    req.body.counter = Number(req.body.counter)
+    req.body.cost = req.body.counter * 0.25
     collection.insertOne(req.body)
     .then(result => {
         res.redirect('/')
@@ -49,6 +50,15 @@ app.post('/electricity', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.delete('/deleteEntry', (req, res) => {
+    console.log(req.body)
+    db.collection('electricity').deleteOne({_id: req.body._id})
+    .then(result => {
+        console.log('entry deleted')
+        res.json('entry deleted')
+    })
+    .catch(error => console.error(error))
+})
 
 
 

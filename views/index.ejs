@@ -33,7 +33,8 @@
                   <td><%= electricity[i].date %></td>
                   <td><%= electricity[i].counter%></td>
                   <td></td>
-                  <td><%= (electricity[i].counter * 0.35).toFixed(2)%> $</td>
+                  <td><%= electricity[i].cost%> $</td>
+                  <td><button class="delete-button">delete</button></td>
                 </tr>    
                <% } %>
         </table>

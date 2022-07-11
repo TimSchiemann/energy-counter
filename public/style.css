@@ -55,3 +55,11 @@ table {
     margin: 2em auto;
     border-spacing: 1em;
 }
+
+.delete-button {
+    min-width: 7rem;
+}
+
+td{
+    text-align: center;
+}
